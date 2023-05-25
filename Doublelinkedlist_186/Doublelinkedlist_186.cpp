@@ -178,8 +178,34 @@ int main() {
 			cout << "5. Search for a record in the list" << endl;
 			cout << "6. EXIT" << endl;
 			cout << "\nEnter yor choice (1-6) : ";
-			char ch:
+			char ch;
 			cin >> ch;
+
+			switch (ch) {
+			case '1':
+				obj.addNode();
+				break;
+			case '2':
+				obj.hapus();
+				break;
+			case '3':
+				obj.traverse();
+				break;
+			case '4':
+				obj.revtraverse();
+				break;
+			case '5':
+				obj.SearchData();
+				break;
+			case '6':
+				return 0;
+			default:
+				cout << "\nInvalid option" << endl;
+				break;
+			}
+		}
+		catch (exception& e) {
+			cout << "Check for the values entered." << endl;
 		}
 	}
 }
