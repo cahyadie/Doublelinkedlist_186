@@ -40,7 +40,7 @@ void DoubleLinkedList::addNode() {
 	newNode->noMhs = nim;
 	newNode->name = nm;
 
-	/*insert a node in the beginning of a doulby - linked list*/
+
 	if (START == NULL || nim <= START->noMhs) {
 		if (START != NULL && nim == START->noMhs) {
 			cout << "\nDuplicate number not allowed" << endl;
@@ -51,6 +51,18 @@ void DoubleLinkedList::addNode() {
 			START->prev = newNode;
 		newNode->prev = NULL;
 		START = newNode;
+		return;
+	}
+	/*inserting a node between two nodes in the list*/
+	Node* current = START;	//step 1.a
+	Node* previous = NULL;	//step 1.b
+	while (current->next != NULL && current->next->noMhs < nim)	//step 1.c
+	{
+		previous = current;	//step 1.d
+		current = current->next;	//step 1.e
+	}
+	if (current->next != NULL && nim == current->next->noMhs) {
+		cout << "\nDuplicate roll numbers not allowed" << endl;
 		return;
 	}
 }
