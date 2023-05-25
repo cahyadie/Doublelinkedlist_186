@@ -7,5 +7,20 @@ public:
 	int noMhs;
 	string name;
 	Node* next;
-	node* prev;
+	Node* prev;
+};
+
+class DoubleLinkedList {
+private:
+	Node* START;
+public:
+	DoubleLinkedList();
+	void addNode();
+	bool search(int rollNo, Node** previous, Node** cureent);
+	bool deleteNode(int rollNo);
+	bool listEmpty();
+	void traverse();
+	void revtraverse();
+	void hapus();
+	void SearchData();
 };
